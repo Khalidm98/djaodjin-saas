@@ -12,6 +12,15 @@ Roadmap
 Released versions
 =================
 
+0.12.0
+
+  * adds abstract models for `Organization` and `Role`
+  * maps foreign keys to `settings.ORGANIZATION_MODEL` instead of directly mapping them to `saas.Organization`
+  * uses `get_organization_model()` and `get_role_model()` instead of directly using `Organization` and `Role`
+  * adds missing migrations from previous version
+
+ -- Khalid Muhammad <khalid.refaat98@gmail.com>  Tue, 19 Jul 2022 18:00:00
+
 0.11.0
 
   * fixes balance when extending a subscription through a group buy
