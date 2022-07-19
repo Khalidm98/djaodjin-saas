@@ -30,8 +30,7 @@ including Transaction history.
 from django.core.management.base import BaseCommand
 
 # We need this import to avoid getting an exception importing 'saas.models'
-from ...utils import datetime_or_now #pylint: disable=unused-import
-from ...models import Organization
+from ...utils import datetime_or_now, get_organization_model  # pylint: disable=unused-import
 
 
 class Command(BaseCommand):
@@ -40,5 +39,5 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         #pylint: disable=too-many-locals
-        organizations = Organization.objects.filter(slug__in=args)
+        organizations = get_organization_model().objects.filter(slug__in=args)
         organizations.delete()
