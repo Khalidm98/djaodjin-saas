@@ -1564,12 +1564,12 @@ class Charge(models.Model):
     DONE = 1
     FAILED = 2
     DISPUTED = 3
-    CHARGE_STATES = {
+    CHARGE_STATES = (
         (CREATED, 'created'),
         (DONE, 'done'),
         (FAILED, 'failed'),
         (DISPUTED, 'disputed')
-    }
+    )
 
     objects = ChargeManager()
 
